@@ -1,12 +1,15 @@
-# Inlämningsuppgift E2E-tester
+# E2E-testing using cypress
 
-Detta projekt skall användas som mall för inlämningen av e2e-tester. Klona ner repot, ta bort .git-mappen och skapa ert eget repo av projektet. Därefter kan ni börja skriva era tester.
+School assigment to test "the happy flow" for simple movie search webapp with omdb api. 
 
-## Gör er bekväma med koden
+## To download project
 
-Detta borde kunna gå ganska snabbt då ni har sett koden tidigare. Läs gärna på en del om e2e-tester genom att titta här: [cypress.io - Your first e2e test](https://docs.cypress.io/guides/end-to-end-testing/writing-your-first-end-to-end-test)
+- Clone repo to your computer
+- npm i
+- npx parcel src/index.html (to start webserver)
+- npx cypress open
 
-## Er uppgift
+## Goals for assigment
 
 Ni skall skapa e2e-tester för applikationen som ni har fått given.
 
