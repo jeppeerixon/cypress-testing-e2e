@@ -1,0 +1,19 @@
+{
+    "Search": 
+    [
+        {
+            "Title": "Old Movie",
+            "Year": "1993",
+            "imdbID": "123asdasd",
+            "Type": "movie",
+            "Poster": "http://bildlank.se/moviePoster.jpg"
+        },
+        {
+            "Title": "Random TV Show",
+            "Year": "2017",
+            "imdbID": "tt123456",
+            "Type": "show",
+            "Poster": "http://bildlank.se/TvShowPoster.jpg"
+        }
+    ]
+}
