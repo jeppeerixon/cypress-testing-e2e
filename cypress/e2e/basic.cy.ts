@@ -40,21 +40,33 @@ describe("Tests for our not so happy flow", () => {
 
 });
 
-describe("Tests using mock data", () => {
-    it("should not find any search results", () => {
+describe("Tests using mockdata/fixtures", () => {
 
-        cy.get("#searchText").type("borde inte hitta någon film").should("have.value", "borde inte hitta någon film");
+    it("should intercept respons and post mockdata", () => {
+
+        cy.intercept("GET", "http://omdbapi.com/*", {fixture: 'mockdata'}).as('omdbGet')
     
+        cy.get('#searchText').type("batman");
         cy.get("#search").click();
 
-        cy.get("p").should("contain.text", "Inga sökresultat att visa");
+        cy.wait('@omdbGet').its('request.url').should('contain', "batman");
 
+        cy.get(".movie").should("have.length", 2);
+        cy.get(".movie:first > h3").should("contain.text", "Old Movie");
+        
+    });
+
+    it("should not find any search results", () => {
+
+        cy.intercept("GET", "http://omdbapi.com/*", {fixture: 'errormessage'}).as('omdbGet')
+    
+        cy.get('#searchText').type("superman");
+        cy.get("#search").click();
+
+        cy.wait('@omdbGet').its('request.url').should('contain', "superman");
+
+        cy.get("p").should("contain.text", "Inga sökresultat att visa");
+        
     });
 
 });
-
-
-
-// lägg till base url
-
-// lätt till before each till url:en
